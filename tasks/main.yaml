@@ -1,0 +1,12 @@
+- name: create run-time configuration directory
+  file: path=~/.bashrc.d state=directory mode=0755
+- name: copy .bashrc
+  template: 
+    src=templates/bashrc.j2
+    dest=~/.bashrc
+    force=yes
+- name: copy .vimrc
+  template: 
+    src=templates/vimrc.j2
+    dest=~/.vimrc
+    force=yes
